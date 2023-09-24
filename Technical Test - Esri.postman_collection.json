@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "717dbfd0-954a-4971-8224-13d5712ab01d",
+		"name": "Technical Test - Esri",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTU2MzQ5ODgsImlhdCI6MTY5NTU0ODU4OCwiaWQiOjExfQ.7gwKLLmpDemwvMcrKdWB7LLOrUkw06uz-hZLerfYzkE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"secretpassword\",\n\t\"email\": \"mad.rfaisal@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTU2MzQ5ODgsImlhdCI6MTY5NTU0ODU4OCwiaWQiOjExfQ.7gwKLLmpDemwvMcrKdWB7LLOrUkw06uz-hZLerfYzkE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"secretpassword\",\n\t\"email\": \"mad.rfaisal@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/user/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTU2MzI0MTgsImlhdCI6MTY5NTU0NjAxOCwiaWQiOjEwfQ.mJQwucJNDK5CZvU2BoL_JQZYVpyDktSCI3dWv3L6fXA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"secretpassword\",\n\t\"email\": \"mad@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/login"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateComplaint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTU2MzY2NzgsImlhdCI6MTY5NTU1MDI3OCwiaWQiOjEyfQ.dCpIYVBwcV6bIj5m5525qCYeC8YhQNjaAEBljZXja8A",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "complaint_category_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "meteran_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "complaint_name",
+							"value": "Water Leakage",
+							"type": "text"
+						},
+						{
+							"key": "short_description",
+							"value": "Leakage near the kitchen sink",
+							"type": "text"
+						},
+						{
+							"key": "priority_level",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/mad/Downloads/thomas-richter-B09tL5bSQJk-unsplash.jpg"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/mad/Downloads/64f5ba4b-8cb7-4385-9ecd-10a5202b787f.jpeg"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/mad/Downloads/Screenshot from 2023-08-18 17-53-28.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/complaint/"
+			},
+			"response": []
+		},
+		{
+			"name": "AllComplaints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/v1/complaint/"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteComplaints",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/api/v1/complaint/2"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateComplaints",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaint_name\": \"Water Leakage\",\n  \"short_description\": \"There is a leak in the water supply line.\",\n  \"priority_level\": 5,\n  \"meteran_id\": 5,\n  \"complaint_category_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/complaint/1"
+			},
+			"response": []
+		},
+		{
+			"name": "AllUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTU2MzY2NzgsImlhdCI6MTY5NTU1MDI3OCwiaWQiOjEyfQ.dCpIYVBwcV6bIj5m5525qCYeC8YhQNjaAEBljZXja8A",
+						"type": "default"
+					}
+				],
+				"url": "http://localhost:8000/api/v1/user/"
+			},
+			"response": []
+		}
+	]
+}
